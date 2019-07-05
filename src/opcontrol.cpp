@@ -37,6 +37,11 @@ using namespace okapi;
 
 	auto liftControl = AsyncControllerFactory::posIntegrated({LEFTLIFT_MOTOR, RIGHTLIFT_MOTOR});
 
+
+	ADIButton unfoldLeft('C');
+	ADIButton unfoldRight('A');
+
+
 	ControllerButton btnUp(ControllerDigital::A);
 	ControllerButton btnDown(ControllerDigital::B);
 	ControllerButton btnBackUp(ControllerDigital::R1);
