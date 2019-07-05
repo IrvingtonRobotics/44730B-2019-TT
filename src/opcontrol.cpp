@@ -22,8 +22,6 @@ using namespace okapi;
 	const int TOPRIGHT_MOTOR = 10;
 	const int BOTRIGHT_MOTOR = 19;
 	const int BOTLEFT_MOTOR = 20;
-
-	//geoffrey is kool
 	
 
 	const int NUM_HEIGHTS = 3;
