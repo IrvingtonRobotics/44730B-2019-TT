@@ -15,17 +15,16 @@ using namespace okapi;
  */
 
  const int TOPLEFT_MOTOR = 9;
- const int TOPRIGHT_MOTOR = -10;
- const int BOTRIGHT_MOTOR = -19;
+ const int TOPRIGHT_MOTOR = 10;
+ const int BOTRIGHT_MOTOR = 19;
  const int BOTLEFT_MOTOR = 20;
- auto drive_auton = ChassisControllerFactory::create(TOPLEFT_MOTOR, TOPRIGHT_MOTOR,  BOTRIGHT_MOTOR, BOTLEFT_MOTOR,   AbstractMotor::gearset::green,
-  {4_in, 13.5_in});
+
 
 void autonomous(){
 
-
-  drive_auton.turnAngle(180_deg);
-  drive_auton.moveDistance(5_ft);
+  auto drive_auton = ChassisControllerFactory::create(TOPLEFT_MOTOR, BOTLEFT_MOTOR , BOTRIGHT_MOTOR, TOPRIGHT_MOTOR,   AbstractMotor::gearset::green,
+   {4_in, 13.5_in});
+  drive_auton.moveDistance(250_ft);
 
 
 }

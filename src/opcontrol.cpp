@@ -22,14 +22,14 @@ using namespace okapi;
 	const int TOPRIGHT_MOTOR = 10;
 	const int BOTRIGHT_MOTOR = 19;
 	const int BOTLEFT_MOTOR = 20;
-	
+
 	const int NUM_HEIGHTS = 3;
 	const int height1 = 200;
 	const int height2 = 600;
 	const int height3 = 1000;
 	const int heights[NUM_HEIGHTS] = {height1, height2, height3};
 
-	auto drive = ChassisModelFactory::create(TOPLEFT_MOTOR, TOPRIGHT_MOTOR,  BOTRIGHT_MOTOR, BOTLEFT_MOTOR, 200, 12000);
+	auto drive = ChassisModelFactory::create(TOPLEFT_MOTOR, BOTLEFT_MOTOR,  BOTRIGHT_MOTOR, TOPRIGHT_MOTOR, 200, 12000);
 
 	auto liftControl = AsyncControllerFactory::posIntegrated({LEFTLIFT_MOTOR, RIGHTLIFT_MOTOR});
 
@@ -43,13 +43,12 @@ void opcontrol() {
 	Controller masterController;
 	int goalHeight = 0;
 
-
 	  while (true) {
-			int power = masterController.getAnalog(ControllerAnalog::leftX);
-			int strafe = masterController.getAnalog(ControllerAnalog::leftY);
+			int power = masterController.getAnalog(ControllerAnalog::leftY);
+			int strafe = masterController.getAnalog(ControllerAnalog::leftX);
 			int turn = masterController.getAnalog(ControllerAnalog::rightX);
 
-			drive.xArcade(strafe, power, turn);
+			drive.xArcade(power, turn, strafe);
 
 
     if (btnUp.changedToPressed() && goalHeight < NUM_HEIGHTS - 1) {
