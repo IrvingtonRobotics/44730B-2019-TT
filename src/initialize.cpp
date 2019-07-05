@@ -1,5 +1,6 @@
 #include "main.h"
-#include "hello_world.c"
+#include "screen/resources.hpp"
+
 
 
 /**
@@ -9,9 +10,9 @@
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-
+screen::initializeStyles();
 }
-lv_tutorial_hello_world();
+
 /**
  * Runs while the robot is in the disabled state of Field Management System or
  * the VEX Competition Switch, following either autonomous or opcontrol. When
