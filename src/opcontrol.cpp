@@ -10,7 +10,7 @@ using namespace okapi;
  * control mode.
  *
  * If no competition control is connected, this function will run immediately
- * following initialize(). g
+ * following initialize(). 
  *
  * If the robot is disabled or communications is lost, the
  * operator control task will be stoped. Re-enabling the robot will restart the
