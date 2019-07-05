@@ -1,5 +1,5 @@
 #include "main.h"
-#include "screen/resources.hpp"
+// #include "screen/resources.hpp"
 
 
 
@@ -10,7 +10,7 @@
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-screen::initializeStyles();
+// screen::initializeStyles();
 }
 
 /**
