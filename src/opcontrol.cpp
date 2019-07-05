@@ -10,7 +10,7 @@ using namespace okapi;
  * control mode.
  *
  * If no competition control is connected, this function will run immediately
- * following initialize().
+ * following initialize(). g
  *
  * If the robot is disabled or communications is lost, the
  * operator control task will be stoped. Re-enabling the robot will restart the
@@ -22,7 +22,7 @@ using namespace okapi;
 	const int TOPRIGHT_MOTOR = 10;
 	const int BOTRIGHT_MOTOR = 19;
 	const int BOTLEFT_MOTOR = 20;
-	
+
 
 	const int NUM_HEIGHTS = 3;
 	const int height1 = 200;
