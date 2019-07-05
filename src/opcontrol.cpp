@@ -22,9 +22,13 @@ using namespace okapi;
 	const int TOPRIGHT_MOTOR = 10;
 	const int BOTRIGHT_MOTOR = 19;
 	const int BOTLEFT_MOTOR = 20;
+<<<<<<< HEAD
 
 	//geoffrey is kool
 	//liftControl
+=======
+	
+>>>>>>> 1e24056843464bbbaa0edbf4613f1ff109787741
 
 	const int NUM_HEIGHTS = 3;
 	const int height1 = 200;
