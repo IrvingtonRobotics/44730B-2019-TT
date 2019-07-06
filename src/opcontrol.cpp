@@ -1,6 +1,5 @@
 #include "main.h"
 #include "okapi/api.hpp"
-#include "hello_world.c"
 // #include "screen/field.hpp"
 // #include "display/lvgl.h"
 

@@ -1,5 +1,7 @@
 #include "main.h"
 #include "okapi/api.hpp"
+#include "chassis.h"
+#include "autonomousSelector.h"
 
 using namespace okapi;
 /**
@@ -14,17 +16,27 @@ using namespace okapi;
  * from where it left off.
  */
 
- const int TOPLEFT_MOTOR = 9;
- const int TOPRIGHT_MOTOR = 10;
- const int BOTRIGHT_MOTOR = 19;
- const int BOTLEFT_MOTOR = 20;
-
+extern Chassis chassis;
+extern autonomousSelector autoSelector;
 
 void autonomous(){
+  switch (autoSelector.startPos){
+    case (startPosition::left_pole): {
 
-  auto drive_auton = ChassisControllerFactory::create(TOPLEFT_MOTOR, BOTLEFT_MOTOR , BOTRIGHT_MOTOR, TOPRIGHT_MOTOR,   AbstractMotor::gearset::green,
-   {4_in, 13.5_in});
-  drive_auton.moveDistance(250_ft);
+    }
 
+    case (startPosition::middle_shortpole): {}
+
+    case (startPosition::right_pole): {}
+
+    case (startPosition::right_wallpole): {}
+
+    case (startPosition::skills): {}
+
+    case (startPosition::disabled): {}
+
+
+  chassis.driveStraight(48_in);
+}
 
 }
