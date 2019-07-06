@@ -1,6 +1,7 @@
 #include "main.h"
 #include "okapi/api.hpp"
 #include "chassis.h"
+#include "lift.h"
 #include "autonomousSelector.h"
 
 using namespace okapi;
