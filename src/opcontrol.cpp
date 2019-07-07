@@ -37,8 +37,8 @@ using namespace okapi;
 	auto liftControl = AsyncControllerFactory::posIntegrated({LEFTLIFT_MOTOR, RIGHTLIFT_MOTOR});
 
 
-	ADIButton unfoldLeft('C');
-	ADIButton unfoldRight('A');
+	// ADIButton unfoldLeft('C');
+	// ADIButton unfoldRight('A');
 
 
 	ControllerButton btnUp(ControllerDigital::A);
@@ -51,26 +51,26 @@ using namespace okapi;
 
 	// Idk why tf this doesnt work so help
 
-  // lv_scr_load(*scr);
-	//
-  // screen::Field field(scr);
-	//
-	// field.draw(screen::scoringZone::farRed, {screen::color::purple, screen::color::orange}, {1, 3});
-	// field.draw(screen::scoringZone::nearRed, screen::color::green, 4);
-	// field.draw(screen::cubeGroup::left1, 0b00011);
-	// field.draw(screen::cubeGroup::left3, 0b01100);
-	// field.draw(screen::cubeGroup::right4, 0b01010);
-	// field.draw(screen::cubeGroup::near, CUBE_NEAR_LEFT + CUBE_NEAR_RIGHT + CUBE_FAR_RIGHT);
-	// field.draw(screen::cubeGroup::left4, CUBE_HIGHEST + CUBE_2LOWEST);
-	// field.draw(screen::tower::left, screen::color::none, 0);
-	// field.draw(screen::tower::center, screen::color::orange, 0b1110);
-	// field.draw(screen::tower::far, screen::color::none, TOWER_CUBE_FAR + TOWER_CUBE_LEFT);
-	// field.drawRobot(true, 160);
-	// field.finishDrawing();
-	//
-	//   while (true) {
-	//     pros::delay(1000);
-	//   }
+  lv_scr_load(*scr);
+
+  screen::Field field(scr);
+
+	field.draw(screen::scoringZone::farRed, {screen::color::purple, screen::color::orange}, {1, 3});
+	field.draw(screen::scoringZone::nearRed, screen::color::green, 4);
+	field.draw(screen::cubeGroup::left1, 0b00011);
+	field.draw(screen::cubeGroup::left3, 0b01100);
+	field.draw(screen::cubeGroup::right4, 0b01010);
+	field.draw(screen::cubeGroup::near, CUBE_NEAR_LEFT + CUBE_NEAR_RIGHT + CUBE_FAR_RIGHT);
+	field.draw(screen::cubeGroup::left4, CUBE_HIGHEST + CUBE_2LOWEST);
+	field.draw(screen::tower::left, screen::color::none, 0);
+	field.draw(screen::tower::center, screen::color::orange, 0b1110);
+	field.draw(screen::tower::far, screen::color::none, TOWER_CUBE_FAR + TOWER_CUBE_LEFT);
+	field.drawRobot(true, 160);
+	field.finishDrawing();
+
+	  while (true) {
+	    pros::delay(1000);
+	  }
 
 
 void opcontrol() {
