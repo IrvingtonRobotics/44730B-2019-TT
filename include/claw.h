@@ -9,10 +9,11 @@ const int RIGHTCLAW_MOTOR = 0;
 
 class Claw {
 public:
-  ChassisControllerIntegrated claw = AsyncControllerFactory::create(LEFTCLAW_MOTOR,
+  ChassisControllerIntegrated claw = ChassisControllerFactory::create(LEFTCLAW_MOTOR,
      RIGHTCLAW_MOTOR, AbstractMotor::gearset::green);
      ControllerButton presetButtons[2] = {
-       // ControllerButton(Co)
+       ControllerButton(ControllerDigital::up),
+       ControllerButton(ControllerDigital::down)
      };
 };
 #endif
