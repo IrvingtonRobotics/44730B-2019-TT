@@ -43,3 +43,22 @@ void Arm::moveTo(int position) {
 //     pros::Task::delay(5);
 //   }
 // }
+void Arm::waitUntilSettled() {
+  while (!isSettled()) {
+    pros::Task::delay(10);
+  }
+}
+
+void Arm::teleop() {
+  for (int i = 0; i < 3; ++i) {
+    if (presetButtons[i].changedToPressed()) {
+      moveTo(i);
+    }
+  }
+}
+
+void Arm::returnToInitial() {
+  if (targetPreset == 3) {
+    moveTo(0);
+  }
+}
