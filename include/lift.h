@@ -11,7 +11,7 @@ class Arm {
 public:
   ChassisControllerIntegrated lift = AsyncControllerFactory::create(LEFTLIFT_MOTOR,
      RIGHTLIFT_MOTOR, AbstractMotor::gearset::green);
-  ControllerButton = presetButtons[3] = {
+  ControllerButton presetButtons[3] = {
       ControllerButton(ControllerDigital::down),
       ControllerButton(ControllerDigital::right),
       ControllerButton(ControllerDigital::up)
