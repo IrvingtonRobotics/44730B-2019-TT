@@ -12,7 +12,7 @@ const int BOTLEFT_MOTOR = 20;
 class Chassis {
 public:
   ChassisControllerIntegrated drive = ChassisControllerFactory::create(TOPLEFT_MOTOR,
-    TOPRIGHT_MOTOR, BOTRIGHT_MOTOR, BOTLEFT_MOTOR, okapi::AbstractMotor::gearset::green,
+    TOPRIGHT_MOTOR, BOTRIGHT_MOTOR, BOTLEFT_MOTOR, AbstractMotor::gearset::green,
     {4_in, 13.5_in});
   Controller& controller;
   ControllerButton brakeButton = ControllerButton(ControllerDigital::left);

@@ -16,5 +16,16 @@ public:
       ControllerButton(ControllerDigital::right),
       ControllerButton(ControllerDigital::up)
   };
+  TwoBar();
+    void teleop();
+    void moveTo(int preset);
+    static void runPID(void* self);
+    void avoidPuncherPath();
+    void returnToInitial();
+    bool isSafeToShoot();
+    void waitUnilSafeToShoot();
+    bool isSettled();
+    void waitUntilSettled();
+
 };
 #endif
