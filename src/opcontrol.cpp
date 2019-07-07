@@ -1,4 +1,7 @@
 #include "main.h"
+#include "chassis.h"
+#include "lift.h"
+
 #include "okapi/api.hpp"
 // #include "screen/field.hpp"
 // #include "display/lvgl.h"
@@ -18,12 +21,8 @@ using namespace okapi;
  * operator control task will be stoped. Re-enabling the robot will restart the
  * task, not resume it from where it left off.
  */
-	const int LEFTLIFT_MOTOR = 11;
-	const int RIGHTLIFT_MOTOR = 1;
-	const int TOPLEFT_MOTOR = 9;
-	const int TOPRIGHT_MOTOR = 10;
-	const int BOTRIGHT_MOTOR = 19;
-	const int BOTLEFT_MOTOR = 20;
+	extern Chassis chassis;
+	extern Arm arm;
 
 
 	const int NUM_HEIGHTS = 3;
@@ -46,31 +45,29 @@ using namespace okapi;
 	ControllerButton btnBackUp(ControllerDigital::R1);
 	ControllerButton btnBackDown(ControllerDigital::R2);
 
-
-	lv_obj_t *scr = lv_obj_create(NULL, NULL);
-
 	// Idk why tf this doesnt work so help
 
-  lv_scr_load(*scr);
-
-  screen::Field field(scr);
-
-	field.draw(screen::scoringZone::farRed, {screen::color::purple, screen::color::orange}, {1, 3});
-	field.draw(screen::scoringZone::nearRed, screen::color::green, 4);
-	field.draw(screen::cubeGroup::left1, 0b00011);
-	field.draw(screen::cubeGroup::left3, 0b01100);
-	field.draw(screen::cubeGroup::right4, 0b01010);
-	field.draw(screen::cubeGroup::near, CUBE_NEAR_LEFT + CUBE_NEAR_RIGHT + CUBE_FAR_RIGHT);
-	field.draw(screen::cubeGroup::left4, CUBE_HIGHEST + CUBE_2LOWEST);
-	field.draw(screen::tower::left, screen::color::none, 0);
-	field.draw(screen::tower::center, screen::color::orange, 0b1110);
-	field.draw(screen::tower::far, screen::color::none, TOWER_CUBE_FAR + TOWER_CUBE_LEFT);
-	field.drawRobot(true, 160);
-	field.finishDrawing();
-
-	  while (true) {
-	    pros::delay(1000);
-	  }
+// lv_obj_t *scr = lv_obj_create(NULL, NULL);
+  // lv_scr_load(*scr);
+	//
+  // screen::Field field(scr);
+	//
+	// field.draw(screen::scoringZone::farRed, {screen::color::purple, screen::color::orange}, {1, 3});
+	// field.draw(screen::scoringZone::nearRed, screen::color::green, 4);
+	// field.draw(screen::cubeGroup::left1, 0b00011);
+	// field.draw(screen::cubeGroup::left3, 0b01100);
+	// field.draw(screen::cubeGroup::right4, 0b01010);
+	// field.draw(screen::cubeGroup::near, CUBE_NEAR_LEFT + CUBE_NEAR_RIGHT + CUBE_FAR_RIGHT);
+	// field.draw(screen::cubeGroup::left4, CUBE_HIGHEST + CUBE_2LOWEST);
+	// field.draw(screen::tower::left, screen::color::none, 0);
+	// field.draw(screen::tower::center, screen::color::orange, 0b1110);
+	// field.draw(screen::tower::far, screen::color::none, TOWER_CUBE_FAR + TOWER_CUBE_LEFT);
+	// field.drawRobot(true, 160);
+	// field.finishDrawing();
+	//
+	//   while (true) {
+	//     pros::delay(1000);
+	//   }
 
 
 void opcontrol() {
@@ -79,8 +76,8 @@ void opcontrol() {
 
 	  while (true) {
 			int power = masterController.getAnalog(ControllerAnalog::leftY);
-			int strafe = masterController.getAnalog(ControllerAnalog::leftX);
-			int turn = masterController.getAnalog(ControllerAnalog::rightX);
+			int strafe = masterController.getAnalog(ControllerAnalog::rightX);
+			int turn = masterController.getAnalog(ControllerAnalog::leftX);
 
 			drive.xArcade(power, turn, strafe);
 

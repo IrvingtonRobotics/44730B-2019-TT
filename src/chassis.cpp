@@ -2,8 +2,8 @@
 #include <cstring>
 
 Chassis::Chassis(Controller& c) : controller(c) {
-  left.setEncoderUnits(AbstractMotor::encoderUnits::degrees);
-  right.setEncoderUnits(AbstractMotor::encoderUnits::degrees);
+  leftMotors.setEncoderUnits(AbstractMotor::encoderUnits::degrees);
+  rightMotors.setEncoderUnits(AbstractMotor::encoderUnits::degrees);
 }
 
 void Chassis::driveStraight(QLength distance) {
@@ -43,8 +43,8 @@ void Chassis::driveArc(QLength radius, QAngle angle) {
     rpm_r = 200_rpm * (distance_r / distance_l);
   }
 
-  left.moveRelative((distance_l / (WHEEL_DIAM * M_PI)).getValue() * 360, rpm_l.convert(rpm));
-  right.moveRelative((distance_r / (WHEEL_DIAM * M_PI)).getValue() * 360, rpm_r.convert(rpm));
+  leftMotors.moveRelative((distance_l / (WHEEL_DIAM * M_PI)).getValue() * 360, rpm_l.convert(rpm));
+  rightMotors.moveRelative((distance_r / (WHEEL_DIAM * M_PI)).getValue() * 360, rpm_r.convert(rpm));
 }
 
 void Chassis::driveManual() {
@@ -84,8 +84,8 @@ void Chassis::driveManual() {
 
   r *= 12000;
   l *= 12000;
-  left.moveVoltage(l);
-  right.moveVoltage(r);
+  leftMotors.moveVoltage(l);
+  rightMotors.moveVoltage(r);
 
   #endif
 }
