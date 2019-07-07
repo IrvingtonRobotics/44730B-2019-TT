@@ -33,7 +33,7 @@ using namespace okapi;
 
 	auto drive = ChassisModelFactory::create(TOPLEFT_MOTOR, BOTLEFT_MOTOR,  BOTRIGHT_MOTOR, TOPRIGHT_MOTOR, 200, 12000);
 
-	auto liftControl = AsyncControllerFactory::posIntegrated({LEFTLIFT_MOTOR, RIGHTLIFT_MOTOR});
+	auto liftControl = AsyncControllerFactory::posIntegrated({-LEFTLIFT_MOTOR, -RIGHTLIFT_MOTOR});
 
 
 	// ADIButton unfoldLeft('C');
