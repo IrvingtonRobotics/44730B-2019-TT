@@ -16,7 +16,7 @@ public:
       ControllerButton(ControllerDigital::right),
       ControllerButton(ControllerDigital::up)
   };
-  TwoBar();
+  Arm();
     void teleop();
     void moveTo(int preset);
     static void runPID(void* self);

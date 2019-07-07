@@ -23,7 +23,7 @@ extern autonomousSelector autoSelector;
 void autonomous(){
   switch (autoSelector.startPos){
     case (startPosition::left_pole): {
-
+      drive.driveStraight(5_in);
     }
 
     case (startPosition::middle_shortpole): {}
