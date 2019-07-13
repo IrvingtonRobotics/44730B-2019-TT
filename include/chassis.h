@@ -12,8 +12,8 @@ const int TOPRIGHT_MOTOR = 10;
 const int BOTRIGHT_MOTOR = 19;
 const int BOTLEFT_MOTOR = 20;
 
-MotorGroup leftMotors = MotorGroup({TOPLEFT_MOTOR, BOTLEFT_MOTOR});
-MotorGroup rightMotors = MotorGroup({TOPRIGHT_MOTOR, BOTRIGHT_MOTOR});
+extern MotorGroup leftMotors;
+extern MotorGroup rightMotors;
 
 class Chassis {
 public:

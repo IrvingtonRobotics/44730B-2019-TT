@@ -1,6 +1,9 @@
 #include "chassis.h"
 #include <cstring>
 
+MotorGroup leftMotors = MotorGroup({TOPLEFT_MOTOR, BOTLEFT_MOTOR});
+MotorGroup rightMotors = MotorGroup({TOPRIGHT_MOTOR, BOTRIGHT_MOTOR});
+
 Chassis::Chassis(Controller& c) : controller(c) {
   leftMotors.setEncoderUnits(AbstractMotor::encoderUnits::degrees);
   rightMotors.setEncoderUnits(AbstractMotor::encoderUnits::degrees);

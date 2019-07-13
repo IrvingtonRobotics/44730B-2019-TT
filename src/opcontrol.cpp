@@ -6,6 +6,9 @@
 // #include "screen/field.hpp"
 // #include "display/lvgl.h"
 
+MotorGroup leftMotors = MotorGroup({TOPLEFT_MOTOR, BOTLEFT_MOTOR});
+MotorGroup rightMotors = MotorGroup({TOPRIGHT_MOTOR, BOTRIGHT_MOTOR});
+
 using namespace okapi;
 
 /**
@@ -31,9 +34,9 @@ using namespace okapi;
 	const int height3 = 1000;
 	const int heights[NUM_HEIGHTS] = {height1, height2, height3};
 
-	auto drive = ChassisModelFactory::create(TOPLEFT_MOTOR, BOTLEFT_MOTOR,  BOTRIGHT_MOTOR, TOPRIGHT_MOTOR, 200, 12000);
+//	auto drive = ChassisModelFactory::create(TOPLEFT_MOTOR, BOTLEFT_MOTOR,  BOTRIGHT_MOTOR, TOPRIGHT_MOTOR, 200, 12000);
 
-	auto liftControl = AsyncControllerFactory::posIntegrated({-LEFTLIFT_MOTOR, -RIGHTLIFT_MOTOR});
+//	auto liftControl = AsyncControllerFactory::posIntegrated({-LEFTLIFT_MOTOR, -RIGHTLIFT_MOTOR});
 
 
 	// ADIButton unfoldLeft('C');
@@ -74,24 +77,23 @@ void opcontrol() {
 	Controller masterController;
 	int goalHeight = 0;
 
-	  while (true) {
-			int power = masterController.getAnalog(ControllerAnalog::leftY);
-			int strafe = masterController.getAnalog(ControllerAnalog::rightX);
-			int turn = masterController.getAnalog(ControllerAnalog::leftX);
-
-			drive.xArcade(power, turn, strafe);
-
-
-    if (btnUp.changedToPressed() && goalHeight < NUM_HEIGHTS - 1) {
-      goalHeight++;
-      liftControl.setTarget(heights[goalHeight]);
-    }
-		else if (btnDown.changedToPressed() && goalHeight > 0) {
-      goalHeight--;
-      liftControl.setTarget(heights[goalHeight]);
-    }
-	    // Wait and give up the time we don't need to other tasks.
-	    // Additionally, joystick values, motor telemetry, etc. all updates every 10 ms.
-	    pros::delay(10);
+	  // while (true) {
+		// 	int power = masterController.getAnalog(ControllerAnalog::leftY);
+		// 	int strafe = masterController.getAnalog(ControllerAnalog::rightX);
+		// 	int turn = masterController.getAnalog(ControllerAnalog::leftX);
+		//
+		// 	drive.xArcade(power, turn, strafe);
+		//
+		//
+    // if (btnUp.changedToPressed() && goalHeight < NUM_HEIGHTS - 1) {
+    //   goalHeight++;
+    //   liftControl.setTarget(heights[goalHeight]);
+    // }
+		// else if (btnDown.changedToPressed() && goalHeight > 0) {
+    //   goalHeight--;
+    //   liftControl.setTarget(heights[goalHeight]);
+    // }
+	  //   // Wait and give up the time we don't need to other tasks.
+	  //   // Additionally, joystick values, motor telemetry, etc. all updates every 10 ms.
+	  //   pros::delay(10);
 	  }
-	}

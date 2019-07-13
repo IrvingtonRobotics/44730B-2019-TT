@@ -17,14 +17,18 @@ using namespace okapi;
  * from where it left off.
  */
 
-extern Chassis chassis;
+extern Chassis chassis1;
 extern autonomousSelector autoSelector;
-extern Arm arm;
+// extern Arm arm;
+
+MotorGroup leftMotors = MotorGroup({TOPLEFT_MOTOR, BOTLEFT_MOTOR});
+MotorGroup rightMotors = MotorGroup({TOPRIGHT_MOTOR, BOTRIGHT_MOTOR});
+
 
 void autonomous(){
   switch (autoSelector.startPos){
     case (startPosition::left_pole): {
-      chassis.driveStraight(5_in);
+      chassis1.driveStraight(5_in);
     }
 
     case (startPosition::middle_shortpole): {}
@@ -38,7 +42,7 @@ void autonomous(){
     case (startPosition::disabled): {}
 
 
-  chassis.driveStraight(48_in);
+  chassis1.driveStraight(48_in);
 }
 
 }
