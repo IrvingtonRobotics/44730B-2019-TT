@@ -3,6 +3,7 @@
 #include "chassis.h"
 #include "lift.h"
 #include "autonomousSelector.h"
+#include "robot.h"
 
 using namespace okapi;
 /**
@@ -20,6 +21,9 @@ using namespace okapi;
 extern Chassis chassis1;
 extern autonomousSelector autoSelector;
 // extern Arm arm;
+
+Motor leftLiftmotor = LEFTLIFT_MOTOR;
+Motor rightLiftmotor = RIGHTLIFT_MOTOR;
 
 MotorGroup leftMotors = MotorGroup({TOPLEFT_MOTOR, BOTLEFT_MOTOR});
 MotorGroup rightMotors = MotorGroup({TOPRIGHT_MOTOR, BOTRIGHT_MOTOR});

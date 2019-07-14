@@ -203,11 +203,11 @@
             "-fdiagnostics-color",
             "--std=gnu++17",
             "-o",
-            "bin/opcontrol.cpp.o",
-            "src\\opcontrol.cpp"
+            "bin/chassis.cpp.o",
+            "src\\chassis.cpp"
         ],
         "directory": "C:\\Users\\sande\\44730B-2019-TT",
-        "file": "src\\opcontrol.cpp"
+        "file": "src\\chassis.cpp"
     },
     {
         "arguments": [
@@ -238,11 +238,11 @@
             "-fdiagnostics-color",
             "--std=gnu++17",
             "-o",
-            "bin/chassis.cpp.o",
-            "src\\chassis.cpp"
+            "bin/opcontrol.cpp.o",
+            "src\\opcontrol.cpp"
         ],
         "directory": "C:\\Users\\sande\\44730B-2019-TT",
-        "file": "src\\chassis.cpp"
+        "file": "src\\opcontrol.cpp"
     },
     {
         "arguments": [

@@ -1,16 +1,8 @@
 #ifndef CHASSIS_H
 #define CHASSIS_H
 
-#define WHEELBASE_WIDTH 17_in
-#define WHEEL_DIAM 4_in
-
 #include "main.h"
 #include "okapi/api.hpp"
-
-const int TOPLEFT_MOTOR = 9;
-const int TOPRIGHT_MOTOR = 10;
-const int BOTRIGHT_MOTOR = 19;
-const int BOTLEFT_MOTOR = 20;
 
 extern MotorGroup leftMotors;
 extern MotorGroup rightMotors;

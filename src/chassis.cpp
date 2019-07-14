@@ -1,8 +1,12 @@
 #include "chassis.h"
+#include "robot.h"
 #include <cstring>
 
 MotorGroup leftMotors = MotorGroup({TOPLEFT_MOTOR, BOTLEFT_MOTOR});
 MotorGroup rightMotors = MotorGroup({TOPRIGHT_MOTOR, BOTRIGHT_MOTOR});
+
+Motor leftLiftmotor = LEFTLIFT_MOTOR;
+Motor rightLiftmotor = RIGHTLIFT_MOTOR;
 
 Chassis::Chassis(Controller& c) : controller(c) {
   leftMotors.setEncoderUnits(AbstractMotor::encoderUnits::degrees);

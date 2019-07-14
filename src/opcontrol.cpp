@@ -1,17 +1,21 @@
 #include "main.h"
 #include "chassis.h"
 #include "lift.h"
+#include "robot.h"
 
 #include "okapi/api.hpp"
 // #include "screen/field.hpp"
 // #include "display/lvgl.h"
+
+Motor leftLiftmotor = LEFTLIFT_MOTOR;
+Motor rightLiftmotor = RIGHTLIFT_MOTOR;
 
 MotorGroup leftMotors = MotorGroup({TOPLEFT_MOTOR, BOTLEFT_MOTOR});
 MotorGroup rightMotors = MotorGroup({TOPRIGHT_MOTOR, BOTRIGHT_MOTOR});
 
 using namespace okapi;
 
-/**
+/*
  * Runs the operator control code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
  * the Field Management System or the VEX Competition Switch in the operator
