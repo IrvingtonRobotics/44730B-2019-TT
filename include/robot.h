@@ -4,12 +4,12 @@
 #define WHEELBASE_WIDTH 17_in
 #define WHEEL_DIAM 4_in
 
-#define TOPLEFT_MOTOR 9
-#define TOPRIGHT_MOTOR 10
-#define BOTRIGHT_MOTOR 19
-#define BOTLEFT_MOTOR 20
+const int TOPLEFT_MOTOR = 9;
+const int TOPRIGHT_MOTOR = 10;
+const int BOTRIGHT_MOTOR = 19;
+const int BOTLEFT_MOTOR = 20;
 
-#define LEFTLIFT_MOTOR  11
-#define RIGHTLIFT_MOTOR  1
+const int LEFTLIFT_MOTOR = 11;
+const int RIGHTLIFT_MOTOR = 1;
 
 #endif
